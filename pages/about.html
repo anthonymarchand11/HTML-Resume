@@ -1,20 +1,99 @@
-<h1>About Me</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sem tellus, sagittis non odio nec, interdum
-  elementum lacus. Ut ac justo eget risus sollicitudin fringilla sed ut leo. Ut condimentum elit nec fermentum lobortis.
-  Quisque tincidunt quam nec tincidunt ullamcorper. Integer vitae pretium justo. In placerat volutpat pellentesque.
-  Etiam
-  gravida quam vitae odio pulvinar imperdiet. Vivamus venenatis gravida purus sit amet aliquet. Ut in nibh sed quam
-  laoreet lacinia. Cras cursus ut dui vitae posuere. Vivamus volutpat urna vitae odio fringilla placerat. Nulla vel
-  rhoncus sapien. Phasellus at interdum enim.</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About — Anthony Marchand</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
 
-<p>Curabitur elementum sagittis mollis. In porta nec quam ut semper. Nulla volutpat neque quis lacus mattis eleifend.
-  Phasellus et congue odio. Mauris tristique, nisl quis porttitor porttitor, tortor ante mattis ex, at dictum tortor
-  dolor
-  ut sem. Nullam nec libero non ex porta vulputate a eu sapien. In nec bibendum mauris. Fusce iaculis lectus vel magna
-  laoreet gravida.</p>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <a class="nav__brand" href="../index.html">Anthony Marchand</a>
+        <div class="nav__links">
+          <a aria-current="page" href="../pages/about.html">About</a>
+          <a href="../pages/Projects.html">Projects</a>
+          <a href="../pages/resume.html">Résumé</a>
+        </div>
+      </nav>
+    </header>
 
-<p>Donec euismod vestibulum arcu, a blandit metus mattis ultrices. Integer quis hendrerit justo. Maecenas sed tempor mi.
-  Fusce egestas urna leo. Mauris viverra sem sed libero egestas, volutpat aliquet magna porta. Quisque id diam sed ipsum
-  interdum sollicitudin id quis augue. Donec congue nisl nec massa ornare imperdiet quis quis odio. Etiam ut volutpat
-  nisl. Vestibulum hendrerit justo nibh, eget consequat magna fermentum finibus. Pellentesque et urna fringilla, rutrum
-  neque in, varius leo. Vestibulum efficitur id massa eget pellentesque.</p>
+    <main>
+      <article class="about panel">
+        <!-- Intro: short central paragraph -->
+        <header class="about__header">
+          <h1>About Me</h1>
+          <p class="about__intro">
+            I’m Anthony Marchand, a Computer Science student at UVic with interests in
+            systems, cybersecurity, and data science. I enjoy building clean, well-tested
+            software and exploring the intersection of performance and reliability.
+            Currently seeking co-op opportunities where I can contribute to real products and grow.
+          </p>
+        </header>
+
+        <!-- Two-column sections (stack on mobile) -->
+        <section class="about__grid">
+          <section class="about__section">
+            <h2>Interests</h2>
+            <ul class="about__list">
+              <li>Operating systems & filesystems (CSC360 projects)</li>
+              <li>Security fundamentals & secure coding</li>
+              <li>Data pipelines, ML basics, reproducible analysis</li>
+            </ul>
+          </section>
+
+          <section class="about__section">
+            <h2>Hobbies</h2>
+            <ul class="about__list">
+              <li>Workout tracking & nutrition spreadsheets</li>
+              <li>Embedded tinkering (AVR/Arduino, LCD drivers)</li>
+              <li>Twine interactive stories & small web apps</li>
+            </ul>
+          </section>
+
+          <section class="about__section">
+            <h2>Extracurriculars</h2>
+            <ul class="about__list">
+              <li>Bootcamps: Git/GitHub, CMake & C/C++ tooling</li>
+              <li>Open-source contributions & code reviews</li>
+              <li>Student study groups / tutoring peers</li>
+            </ul>
+          </section>
+
+          <section class="about__section">
+            <h2>Quick Facts</h2>
+            <ul class="about__list">
+              <li>Based in Victoria, BC</li>
+              <li>Languages: C/C++, Python, SQL</li>
+              <li>Tools: Git, Linux, CMake, scikit-learn</li>
+            </ul>
+          </section>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Anthony Marchand</p>
+      <div class="social-links">
+        <a href="mailto:anthony.marchand@hotmail.ca" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/your-github" target="_blank" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://x.com/your-handle" target="_blank" aria-label="X / Twitter">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </div>
+    </footer>
+    
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
