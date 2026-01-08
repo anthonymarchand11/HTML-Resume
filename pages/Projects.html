@@ -1,24 +1,88 @@
-<section class="projects panel">
-  <header class="projects__header">
-    <h1>Completed Projects</h1>
-    <p class="projects__subtitle">A collection of academic and independent work.</p>
-    <a class="btn btn--primary" href="https://github.com/your-github" target="_blank">
-      <i class="fa-brands fa-github"></i> View My GitHub Profile
-    </a>
-  </header>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Projects — Anthony Marchand</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  </head>
 
-  <div class="projects__list" style="display: grid; gap: 20px; margin-top: 30px;">
-    <div class="about__section">
-      <h3>Medical Cost Prediction</h3>
-      <p>Regression models (Random Forest, Decision Tree) to predict insurance charges using scikit-learn[cite: 15, 16].</p>
-    </div>
-    <div class="about__section">
-      <h3>Penguin Species Classifier</h3>
-      <p>Binary classifier for the Palmer Penguins dataset focusing on bias and responsible data interpretation[cite: 19, 22].</p>
-    </div>
-    <div class="about__section">
-      <h3>FAT – File System Manager</h3>
-      <p>C-based utilities for disk information and directory traversal in FAT-style images[cite: 28].</p>
-    </div>
-    </div>
-</section>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <a class="nav__brand" href="../index.html">Anthony Marchand</a>
+        <div class="nav__links">
+          <a href="../pages/about.html">About</a>
+          <a aria-current="page" href="../pages/Projects.html">Projects</a>
+          <a href="../pages/resume.html">Résumé</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="projects panel">
+        <header class="projects__header" style="text-align: center; margin-bottom: 40px;">
+          <h1>Completed Projects</h1>
+          <p class="projects__subtitle" style="color: var(--muted); margin-bottom: 24px;">
+            A selection of my work in systems, machine learning, and secure software development.
+          </p>
+          <a class="btn btn--primary" href="https://github.com/your-github" target="_blank">
+            <i class="fa-brands fa-github"></i> View My GitHub Profile
+          </a>
+        </header>
+
+        <div class="projects__list">
+          <article class="project-item">
+            <h3>Medical Cost Prediction</h3>
+            <p>Built and evaluated regression models (Linear, Decision Tree, Random Forest) to predict insurance charges. Used scikit-learn preprocessing pipelines to handle mixed-type data[cite: 16, 17].</p>
+            <div class="project-item__note">
+              <i class="fa-solid fa-lock"></i> 
+              Code available upon request to comply with UVic academic integrity.
+            </div>
+          </article>
+
+          <article class="project-item">
+            <h3>Medical Clinic Record System</h3>
+            <p>A doctor-patient management system featuring a PyQt6 GUI, JSON/Pickle data handling, and encryption for ethical data handling[cite: 24, 25, 27].</p>
+            <div class="project-item__note">
+              <i class="fa-solid fa-lock"></i> 
+              Code available upon request.
+            </div>
+          </article>
+
+          <article class="project-item">
+            <h3>FAT – File System Manager</h3>
+            <p>A systems-level project in C designed for parsing and traversing custom FAT-style disk images[cite: 28].</p>
+            <div class="project-item__note">
+              <i class="fa-solid fa-lock"></i> 
+              Code available upon request.
+            </div>
+          </article>
+
+          <article class="project-item">
+            <h3>Penguin Species Classifier</h3>
+            <p>A binary classifier using scikit-learn to predict species from the Palmer Penguins dataset with a focus on bias and data interpretation[cite: 20, 22].</p>
+            <div class="project-item__note">
+              <i class="fa-solid fa-lock"></i> 
+              Code available upon request.
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Anthony Marchand</p>
+      <div class="social-links">
+        <a href="mailto:anthony.marchand@hotmail.ca"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/anthony-l-marchand" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/your-github" target="_blank"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
