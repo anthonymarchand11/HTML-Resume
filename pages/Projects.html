@@ -1,141 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Projects — Anthony Marchand</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../css/style.css" />
-  </head>
+<section class="projects panel">
+  <header class="projects__header">
+    <h1>Completed Projects</h1>
+    <p class="projects__subtitle">A collection of academic and independent work.</p>
+    <a class="btn btn--primary" href="https://github.com/your-github" target="_blank">
+      <i class="fa-brands fa-github"></i> View My GitHub Profile
+    </a>
+  </header>
 
-  <body>
-    <header class="site-header">
-      <nav class="nav">
-        <a class="nav__brand" href="../index.html">Anthony Marchand</a>
-        <div class="nav__links">
-          <a href="../pages/about.html">About</a>
-          <a aria-current="page" href="../pages/Projects.html">Projects</a>
-          <a href="../pages/resume.html">Résumé</a>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <section class="projects panel">
-        <header class="projects__header">
-          <h1>Projects</h1>
-          <p class="projects__subtitle">
-            A selection of systems, security, data, and web work. Use the filters to narrow down.
-          </p>
-
-          <!-- Filter bar -->
-          <div class="projects__filters" role="toolbar" aria-label="Project filters">
-            <button class="chip is-active" data-filter="all">All</button>
-            <button class="chip" data-filter="systems">Systems</button>
-            <button class="chip" data-filter="security">Security</button>
-            <button class="chip" data-filter="data">Data</button>
-            <button class="chip" data-filter="web">Web</button>
-            <button class="chip" data-filter="embedded">Embedded</button>
-          </div>
-        </header>
-
-        <!-- Grid -->
-        <div class="projects__grid">
-          <!-- CARD 1 -->
-          <article class="project-card" data-tags="systems c">
-            <img class="project-card__thumb" src="../assets/projects/fs-toolkit.jpg" alt="File system toolkit terminal output" />
-            <div class="project-card__body">
-              <h2 class="project-card__title">FAT-like Filesystem Toolkit</h2>
-              <p class="project-card__desc">
-                C utilities (<code>diskinfo</code>, <code>disklist</code>, <code>diskget</code>, <code>diskput</code>) for a custom FAT-style image:
-                big-endian parsing, directory traversal, and robust error handling.
-              </p>
-              <div class="project-card__tags">
-                <span class="tag">C</span><span class="tag">Systems</span><span class="tag">Parsing</span>
-              </div>
-              <div class="project-card__actions">
-                <a class="btn btn--primary" href="#" target="_blank" rel="noopener">Repo</a>
-                <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">README</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- CARD 2 -->
-          <article class="project-card" data-tags="data python">
-            <img class="project-card__thumb" src="../assets/projects/ml-regression.jpg" alt="Scatter plot with regression curve" />
-            <div class="project-card__body">
-              <h2 class="project-card__title">Polynomial Regression Pipeline</h2>
-              <p class="project-card__desc">
-                scikit-learn pipeline (PolynomialFeatures + LinearRegression) with RMSE tracking and visualizations.
-                Clean train/test split and coefficient inspection.
-              </p>
-              <div class="project-card__tags">
-                <span class="tag">Python</span><span class="tag">Data</span><span class="tag">ML</span>
-              </div>
-              <div class="project-card__actions">
-                <a class="btn btn--primary" href="#" target="_blank" rel="noopener">Repo</a>
-                <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Demo</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- CARD 3 -->
-          <article class="project-card" data-tags="web security python">
-            <img class="project-card__thumb" src="../assets/projects/http-tester.jpg" alt="HTTP tester tool UI" />
-            <div class="project-card__body">
-              <h2 class="project-card__title">HTTP Tester</h2>
-              <p class="project-card__desc">
-                Socket-based tool that parses URIs, handles redirects/HTTPS, inspects cookies, and reports persistence.
-                Built for network labs and debugging.
-              </p>
-              <div class="project-card__tags">
-                <span class="tag">Python</span><span class="tag">Web</span><span class="tag">Security</span>
-              </div>
-              <div class="project-card__actions">
-                <a class="btn btn--primary" href="#" target="_blank" rel="noopener">Repo</a>
-                <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Docs</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <p>© <span id="year"></span> Anthony Marchand</p>
-      <div class="social-links">
-        <a href="mailto:anthony.marchand@hotmail.ca" aria-label="Email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/your-github" target="_blank" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://x.com/your-handle" target="_blank" aria-label="X / Twitter">
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
-      </div>
-    </footer>
-    
-
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-
-      // Simple client-side filter
-      const chips = document.querySelectorAll('.projects__filters .chip');
-      const cards = document.querySelectorAll('.project-card');
-
-      chips.forEach(chip => chip.addEventListener('click', () => {
-        chips.forEach(c => c.classList.remove('is-active'));
-        chip.classList.add('is-active');
-        const filter = chip.dataset.filter;
-        cards.forEach(card => {
-          if (filter === 'all') { card.style.display = ''; return; }
-          const tags = (card.getAttribute('data-tags') || '').toLowerCase();
-          card.style.display = tags.includes(filter) ? '' : 'none';
-        });
-      }));
-    </script>
-  </body>
-</html>
+  <div class="projects__list" style="display: grid; gap: 20px; margin-top: 30px;">
+    <div class="about__section">
+      <h3>Medical Cost Prediction</h3>
+      <p>Regression models (Random Forest, Decision Tree) to predict insurance charges using scikit-learn[cite: 15, 16].</p>
+    </div>
+    <div class="about__section">
+      <h3>Penguin Species Classifier</h3>
+      <p>Binary classifier for the Palmer Penguins dataset focusing on bias and responsible data interpretation[cite: 19, 22].</p>
+    </div>
+    <div class="about__section">
+      <h3>FAT – File System Manager</h3>
+      <p>C-based utilities for disk information and directory traversal in FAT-style images[cite: 28].</p>
+    </div>
+    </div>
+</section>
